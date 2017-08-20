@@ -4,11 +4,11 @@
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html" />
 <link rel="import" href="simple-search-styles.html" />
 
+
 <dom-module id="simple-search">
 
     <template>
         <style include="simple-search-styles"></style>
-        <iron-a11y-keys target="{{searchInput}}" keys="enter" on-keys-pressed="searchAction"></iron-a11y-keys>
         <div class$="{{_toggleClass}}">
             <div class="flex-horizontal">
                 <div>
@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <div class="trigger-search">
-                        <paper-icon-button icon="icons:search" on-tap="searchAction" ></paper-icon-button>
+                        <paper-icon-button icon="icons:search"></paper-icon-button>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             },
             staticOpen: {
                 type: Boolean,
-                value: false
+                values: false
             },
             _toggleClass: {
                 type: String,
@@ -55,11 +55,11 @@
             }
         },
         toggle: function() {
-            this.set("isOpen", !this.isOpen);
-            if (this.isOpen) {
-                this.$$('#searchInput').value = "";
-                this.$$('#searchInput').focus();
-            }
+          this.set("isOpen", !this.isOpen);
+          if (this.isOpen) {
+              this.$$('#searchInput').value = "";
+              this.$$('#searchInput').focus();
+          }
         },
         _isOpenChanged: function() {
             this._toggleClass = "";
@@ -67,9 +67,7 @@
                 this._toggleClass = "opened";
             }
         },
-        searchAction: function() {
-            this.fire("search", this.$$("#searchInput").value);
-        },
+
         ready: function() {
             this.isOpen = this.staticOpen;
         }

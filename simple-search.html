@@ -4,6 +4,8 @@
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html" />
 <link rel="import" href="simple-search-styles.html" />
 
+<!-- general information -->
+
 <dom-module id="simple-search">
 
     <template>
@@ -45,6 +47,7 @@
                 value: false,
                 observer: "_isOpenChanged"
             },
+            /** property documentation **/
             staticOpen: {
                 type: Boolean,
                 value: false
@@ -54,6 +57,10 @@
                 value: ""
             }
         },
+        /**
+         * toggels the search arear
+         * @return {void} no return parameter
+         */
         toggle: function() {
             this.set("isOpen", !this.isOpen);
             if (this.isOpen) {

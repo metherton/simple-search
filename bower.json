@@ -8,7 +8,8 @@
   "main": "simple-search.html",
   "keywords": [
     "search-element",
-    "simple-search"
+    "simple-search",
+    "web-components"
   ],
   "license": "MIT",
   "ignore": [
@@ -28,6 +29,6 @@
   },
   "devDependencies": {
     "iron-component-page": "^3.0.1",
-    "web-component-tester": "^6.0.1"
+    "web-component-tester": "^6.1.2"
   }
 }
